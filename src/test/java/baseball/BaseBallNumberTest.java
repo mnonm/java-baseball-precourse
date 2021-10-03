@@ -38,7 +38,7 @@ class BaseBallNumberTest {
 
 	@Order(100)
 	@RepeatedTest(REPEAT_TEST_COUNT)
-	@DisplayName("생성된 수의 각 자리수는 ")
+	@DisplayName("생성된 수의 각 자리 숫자는 중복되지 않는다")
 	void 생성된_수는_서로_다른_세_자리수() {
 		BaseBallNumber result = BaseBallNumber.create();
 
