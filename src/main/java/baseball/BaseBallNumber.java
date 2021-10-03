@@ -1,7 +1,9 @@
 package baseball;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import nextstep.utils.Randoms;
@@ -20,6 +22,10 @@ public class BaseBallNumber {
 
 	}
 
+	public static BaseBallNumber valueOf(Integer value) {
+		return new BaseBallNumber(value);
+	}
+
 	private BaseBallNumber(Integer value) {
 		this.value = value;
 	}
@@ -34,5 +40,21 @@ public class BaseBallNumber {
 
 	public Integer getValue() {
 		return value;
+	}
+
+	/**
+	 * idx 0 : 100의 자리수
+	 * idx 1 : 10의 자리수
+	 * idx 2 : 1의 자리수
+	 */
+	public List<Integer> toDigitList() {
+		char[] chars = this.value.toString().toCharArray();
+
+		List<Integer> numbers = new ArrayList<>();
+		for (char integerChar : chars) {
+			numbers.add(Character.getNumericValue(integerChar));
+		}
+
+		return numbers;
 	}
 }

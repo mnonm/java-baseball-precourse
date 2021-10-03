@@ -4,6 +4,7 @@ import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.jupiter.api.DisplayName;
@@ -34,6 +35,19 @@ class BaseBallNumberTest {
 		BaseBallNumber result = BaseBallNumber.create();
 
 		assertThat(result.getValue().toString().length()).isEqualTo(3);
+	}
+
+	@Order(30)
+	@Test
+	void 숫자를_리스트로_변환() {
+		BaseBallNumber number = BaseBallNumber.valueOf(123);
+		List<Integer> result = number.toDigitList();
+
+		assertAll(
+			() -> assertThat(result.get(0)).isEqualTo(1),
+			() -> assertThat(result.get(1)).isEqualTo(2),
+			() -> assertThat(result.get(2)).isEqualTo(3)
+		);
 	}
 
 	@Order(100)
