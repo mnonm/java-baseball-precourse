@@ -1,10 +1,10 @@
-package baseball.result;
+package baseball.model.result;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import baseball.BaseBallNumber;
+import baseball.model.BaseBallNumber;
 
 public class Nothing {
 	private boolean value;

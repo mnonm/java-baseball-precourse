@@ -1,10 +1,10 @@
-package baseball.result;
+package baseball.model.result;
 
 import static org.assertj.core.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import baseball.BaseBallNumber;
+import baseball.model.BaseBallNumber;
 
 class BallTest {
 	@Test

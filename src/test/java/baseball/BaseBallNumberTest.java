@@ -14,6 +14,8 @@ import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
+import baseball.model.BaseBallNumber;
+
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class BaseBallNumberTest {
 	private final static int REPEAT_TEST_COUNT = 1000;

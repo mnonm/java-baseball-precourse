@@ -1,8 +1,8 @@
-package baseball.result;
+package baseball.model.result;
 
 import java.util.List;
 
-import baseball.BaseBallNumber;
+import baseball.model.BaseBallNumber;
 
 public class Ball {
 	private Integer count;
