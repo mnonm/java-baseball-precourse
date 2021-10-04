@@ -1,5 +1,6 @@
 package baseball.controller;
 
+import baseball.model.BaseBall;
 import baseball.view.BaseBallGameView;
 
 public class BaseBallGameController {
@@ -10,6 +11,7 @@ public class BaseBallGameController {
 	}
 
 	public void gameStart() {
+		BaseBall baseBall = BaseBall.create();
 		baseBallGameView.printStartMessage();
 	}
 
