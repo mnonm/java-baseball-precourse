@@ -6,7 +6,8 @@ public enum BaseBallGameMessage {
 	BALL("%d볼"),
 	NOTHING("낫싱"),
 	ANSWER("3개의 숫자를 모두 맞히셨습니다! 게임 끝"),
-	CONTINUE("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+	CONTINUE("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요."),
+	INPUT_NUMBER_NOT_VALID("[에러] 각 자리가 1-9 사이의 세 자리 숫자만 입력해야 합니다.");
 
 	private final String text;
 

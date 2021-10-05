@@ -39,4 +39,8 @@ public class BaseBallGameView {
 		System.out.println(ANSWER.getText());
 		System.out.println(CONTINUE.getText());
 	}
+
+	public void printError() {
+		System.out.println(INPUT_NUMBER_NOT_VALID.getText());
+	}
 }

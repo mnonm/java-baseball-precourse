@@ -27,7 +27,7 @@ public class BaseBallGameController {
 
 		while (!baseBall.isAnswer()) {
 			baseBallGameView.printStartMessage();
-			Integer playerInput = Integer.valueOf(Console.readLine());
+			Integer playerInput = Integer.valueOf(readLineUntilValidNumber(Console.readLine()));
 			baseBall.play(BaseBallNumber.valueOf(playerInput));
 			baseBallGameView.printResultMessage(baseBall.getResult());
 		}
@@ -35,4 +35,14 @@ public class BaseBallGameController {
 		baseBallGameView.printAnswerMessage();
 	}
 
+	private String readLineUntilValidNumber(String inputStr) {
+		while (!BaseBallNumber.isValidValue(inputStr)) {
+			baseBallGameView.printError();
+			baseBallGameView.printStartMessage();
+
+			inputStr = Console.readLine();
+		}
+
+		return inputStr;
+	}
 }
