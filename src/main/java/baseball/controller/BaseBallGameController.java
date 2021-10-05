@@ -12,7 +12,17 @@ public class BaseBallGameController {
 		this.baseBallGameView = baseBallGameView;
 	}
 
-	public void gameStart() {
+	public void gameStarts() {
+		boolean isContinue = true;
+		while (isContinue) {
+			gameStart();
+
+			String input = Console.readLine();
+			isContinue = input.equals("1");
+		}
+	}
+
+	private void gameStart() {
 		BaseBall baseBall = BaseBall.create();
 
 		while (!baseBall.isAnswer()) {
