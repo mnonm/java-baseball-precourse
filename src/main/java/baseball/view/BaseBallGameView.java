@@ -34,4 +34,8 @@ public class BaseBallGameView {
 			System.out.println(NOTHING.getText());
 		}
 	}
+
+	public void printAnswerMessage() {
+		System.out.println(ANSWER.getText());
+	}
 }

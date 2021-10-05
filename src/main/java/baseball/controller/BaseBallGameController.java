@@ -21,6 +21,8 @@ public class BaseBallGameController {
 			baseBall.play(BaseBallNumber.valueOf(playerInput));
 			baseBallGameView.printResultMessage(baseBall.getResult());
 		}
+
+		baseBallGameView.printAnswerMessage();
 	}
 
 }
