@@ -40,4 +40,8 @@ public class BaseBallResult {
 	public boolean hasBall() {
 		return this.ball.getCount() > 0;
 	}
+
+	public boolean isThreeStrike() {
+		return this.strike.getCount().equals(3);
+	}
 }

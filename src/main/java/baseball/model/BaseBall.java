@@ -18,6 +18,10 @@ public class BaseBall {
 		this.result = BaseBallResult.of(answerNumber, playerNumber);
 	}
 
+	public boolean isAnswer() {
+		return this.result != null && this.result.isThreeStrike();
+	}
+
 	public BaseBallResult getResult() {
 		return this.result;
 	}

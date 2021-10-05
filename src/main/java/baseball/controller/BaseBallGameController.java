@@ -15,11 +15,12 @@ public class BaseBallGameController {
 	public void gameStart() {
 		BaseBall baseBall = BaseBall.create();
 
-		baseBallGameView.printStartMessage();
-		Integer playerInput = Integer.valueOf(Console.readLine());
-
-		baseBall.play(BaseBallNumber.valueOf(playerInput));
-		baseBallGameView.printResultMessage(baseBall.getResult());
+		while (!baseBall.isAnswer()) {
+			baseBallGameView.printStartMessage();
+			Integer playerInput = Integer.valueOf(Console.readLine());
+			baseBall.play(BaseBallNumber.valueOf(playerInput));
+			baseBallGameView.printResultMessage(baseBall.getResult());
+		}
 	}
 
 }
