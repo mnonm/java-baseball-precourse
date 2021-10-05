@@ -4,6 +4,7 @@ import baseball.model.result.BaseBallResult;
 
 public class BaseBall {
 	private BaseBallNumber answerNumber;
+	private BaseBallResult result;
 
 	private BaseBall(BaseBallNumber answerNumber) {
 		this.answerNumber = answerNumber;
@@ -13,7 +14,11 @@ public class BaseBall {
 		return new BaseBall(BaseBallNumber.create());
 	}
 
-	public BaseBallResult play(BaseBallNumber playerNumber) {
-		return BaseBallResult.of(answerNumber, playerNumber);
+	public void play(BaseBallNumber playerNumber) {
+		this.result = BaseBallResult.of(answerNumber, playerNumber);
+	}
+
+	public BaseBallResult getResult() {
+		return this.result;
 	}
 }
