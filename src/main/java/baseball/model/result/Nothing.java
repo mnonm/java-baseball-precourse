@@ -13,12 +13,12 @@ public class Nothing {
 		Set<Integer> answerNumberSet = new HashSet<>(answerNumber.toDigitList());
 		List<Integer> playerNumbers = playerNumber.toDigitList();
 
-		boolean isNotContainAnyNumber = false;
+		boolean isNotContainAnyNumber = true;
 		for (Integer number : playerNumbers) {
-			isNotContainAnyNumber ^= answerNumberSet.contains(number);
+			isNotContainAnyNumber = isNotContainAnyNumber && !answerNumberSet.contains(number);
 		}
 
-		return new Nothing(!isNotContainAnyNumber);
+		return new Nothing(isNotContainAnyNumber);
 	}
 
 	private Nothing(boolean value) {
