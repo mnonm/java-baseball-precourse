@@ -32,4 +32,12 @@ public class BaseBallResult {
 	public boolean isNothing() {
 		return this.nothing.getValue();
 	}
+
+	public boolean hasStrike() {
+		return this.strike.getCount() > 0;
+	}
+
+	public boolean hasBall() {
+		return this.ball.getCount() > 0;
+	}
 }

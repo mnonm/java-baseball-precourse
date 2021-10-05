@@ -2,6 +2,7 @@ package baseball.controller;
 
 import baseball.model.BaseBall;
 import baseball.model.BaseBallNumber;
+import baseball.model.result.BaseBallResult;
 import baseball.view.BaseBallGameView;
 import nextstep.utils.Console;
 
@@ -14,9 +15,12 @@ public class BaseBallGameController {
 
 	public void gameStart() {
 		BaseBall baseBall = BaseBall.create();
+
 		baseBallGameView.printStartMessage();
 		Integer playerInput = Integer.valueOf(Console.readLine());
-		BaseBallNumber playerNumber = BaseBallNumber.valueOf(playerInput);
+
+		BaseBallResult result = baseBall.play(BaseBallNumber.valueOf(playerInput));
+		baseBallGameView.printResultMessage(result);
 	}
 
 }
