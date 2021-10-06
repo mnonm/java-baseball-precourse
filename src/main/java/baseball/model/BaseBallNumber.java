@@ -9,7 +9,7 @@ import java.util.Set;
 import nextstep.utils.Randoms;
 
 public class BaseBallNumber {
-	public static final String NUMBER_PATTERN = "^[1-9]{3}$";
+	public static final String THREE_DIGIT_NUMBERS_PATTERN = "^[1-9]{3}$";
 
 	private Integer value;
 
@@ -61,6 +61,6 @@ public class BaseBallNumber {
 	}
 
 	public static boolean isValidValue(String inputStr) {
-		return inputStr.matches(NUMBER_PATTERN);
+		return inputStr.matches(THREE_DIGIT_NUMBERS_PATTERN);
 	}
 }
