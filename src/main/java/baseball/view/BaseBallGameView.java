@@ -14,7 +14,6 @@ public class BaseBallGameView {
 		printStrikeMessageIfHasStrike(result);
 		printBallMessageIfHasBall(result);
 		printNothingIfNothing(result);
-		System.out.println();
 	}
 
 	private void printStrikeMessageIfHasStrike(BaseBallResult result) {
@@ -32,7 +31,9 @@ public class BaseBallGameView {
 	private void printNothingIfNothing(BaseBallResult result) {
 		if (result.isNothing()) {
 			System.out.println(NOTHING.getText());
+			return;
 		}
+		System.out.println();
 	}
 
 	public void printAnswerMessage() {
