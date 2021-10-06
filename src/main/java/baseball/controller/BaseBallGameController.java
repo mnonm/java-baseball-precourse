@@ -6,6 +6,9 @@ import baseball.view.BaseBallGameView;
 import nextstep.utils.Console;
 
 public class BaseBallGameController {
+	public static final String CONTINUE_GAME = "1";
+	public static final String END_GAME = "2";
+
 	private BaseBallGameView baseBallGameView;
 
 	public BaseBallGameController(BaseBallGameView baseBallGameView) {
@@ -17,8 +20,8 @@ public class BaseBallGameController {
 		while (isContinue) {
 			gameStart();
 
-			String input = Console.readLine();
-			isContinue = input.equals("1");
+			String isContinueStr = readLineUntilValidInputForContinue();
+			isContinue = isContinueStr.equals(CONTINUE_GAME);
 		}
 	}
 
@@ -37,12 +40,22 @@ public class BaseBallGameController {
 
 	private String readLineUntilValidNumber(String inputStr) {
 		while (!BaseBallNumber.isValidValue(inputStr)) {
-			baseBallGameView.printError();
+			baseBallGameView.printErrorForInputNumber();
 			baseBallGameView.printStartMessage();
 
 			inputStr = Console.readLine();
 		}
 
 		return inputStr;
+	}
+
+	private String readLineUntilValidInputForContinue() {
+		String input = Console.readLine();
+		while (!(input.equals(CONTINUE_GAME) || input.equals(END_GAME))) {
+			baseBallGameView.printErrorForInputContinue();
+			input = Console.readLine();
+		}
+
+		return input;
 	}
 }
