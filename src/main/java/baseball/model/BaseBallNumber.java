@@ -61,6 +61,17 @@ public class BaseBallNumber {
 	}
 
 	public static boolean isValidValue(String inputStr) {
+		return isThreeDigitNumbers(inputStr) && isUniqueEachNumber(inputStr);
+	}
+
+	private static boolean isThreeDigitNumbers(String inputStr) {
 		return inputStr.matches(THREE_DIGIT_NUMBERS_PATTERN);
+	}
+
+	private static boolean isUniqueEachNumber(String inputStr) {
+		String[] numberArray = inputStr.split("");
+		Set<String> numberSets = new HashSet<>(Arrays.asList(numberArray));
+
+		return numberSets.size() == 3;
 	}
 }
