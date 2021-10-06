@@ -30,7 +30,7 @@ public class StringTest {
 	void substring_test() {
 		String str = "(1,2)";
 
-		String result = str.substring(0, str.length() - 1);
+		String result = str.substring(1, str.length() - 1);
 
 		assertThat(result).isEqualTo("1,2");
 	}
